@@ -26,15 +26,15 @@ just the example.) To build:
 change into the root dirctory and create the directory build. Then
 cd into build and run the command:
 
-   cmake .. -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
+    cmake .. -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
 
 then 
 
-   make
+    make
 
 the example can be run with the command:
 
-   ./examples/example1
+    ./examples/example1
 
 and should produce the output:
 
@@ -71,7 +71,7 @@ interface, that is a pointer type representing the elements is SOA
 form. In the case that the elements are of the same type, then use that
 type, otherwise use unsigned char *:
 
- soa_ptr_type      
+    soa_ptr_type      
  
 The following public method can be provided to allow users to
 allocates space for storing, n, values of the type being defined in
@@ -98,25 +98,25 @@ is, combined with standard memory allocation.
 The first function enables access to SOA data via standard compound
 (i.e. AOS) form.
 
-template<class compound, class ptr, class... Ts>
-compound load_compound(ptr address, size_t byte_stride);
+    template<class compound, class ptr, class... Ts>
+    compound load_compound(ptr address, size_t byte_stride);
  
 The next function enables loading sequences of a single element in SOA
 form. An example of this is if we were storing sequence of homogenous
 points, then a sequence of SOA loads, mapping to AVX/Neon, would load
 4 x values, 4 y values, and so on.
 
-template<class compound, class ptr>
-compound load_soa(ptr address, size_t byte_stride);
+    template<class compound, class ptr>
+    compound load_soa(ptr address, size_t byte_stride);
  
 The next function stores a compound type into SOA form. This is particular useful
 when converting from sequences of AOS into sequences of SOA.
 
-template<class compound, class... Ts>
-void store_soa_compound(compound address, size_t byte_stride, Ts... ts);
+    template<class compound, class... Ts>
+    void store_soa_compound(compound address, size_t byte_stride, Ts... ts);
 
 The final function stores sequences of a single element in SOA
 form. The is the dual to the load_soa defined above.
 
-template<class compound, class... Ts>
-void store_soa(compound address, size_t byte_stride, Ts... ts);
+    template<class compound, class... Ts>
+    void store_soa(compound address, size_t byte_stride, Ts... ts);
