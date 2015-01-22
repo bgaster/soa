@@ -38,19 +38,19 @@ the example can be run with the command:
 
 and should produce the output:
 
-Read in AOS form...
-1 2 3
-4 5 6
-7 8 9
-Read in SOA form...
-1 2 3
-4 5 6
-7 8 9
-Store in SOA form from SOA seqneuces...
-Read in SOA form...
-1 2 3
-4 5 6
-7 8 9
+    Read in AOS form...
+    1 2 3
+    4 5 6
+    7 8 9
+    Read in SOA form...
+    1 2 3
+    4 5 6
+    7 8 9
+    Store in SOA form from SOA seqneuces...
+    Read in SOA form...
+    1 2 3
+    4 5 6
+    7 8 9
 
 Interface
 =========
